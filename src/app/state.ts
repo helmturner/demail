@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { createMachine, fromPromise } from "xstate";
 
 export const machine = createMachine(
@@ -164,12 +165,16 @@ export const machine = createMachine(
       clearError: () => {},
     },
     actors: {
-      fetchEmails: fromPromise({
-        /* ... */
-      }),
-      sendEmail: fromPromise({
-        /* ... */
-      }),
+      fetchEmails: fromPromise(
+        async () => {
+          return [];
+        },
+      ),
+      sendEmail: fromPromise(
+        async () => {
+          return [];
+        },
+      ),
     },
     guards: {},
     delays: {},

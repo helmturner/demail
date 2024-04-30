@@ -4,14 +4,14 @@
  * @see https://v0.dev/t/FI62jx4Oyix
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { Input } from "@/app/ui/input";
+import { Button } from "@/app/ui/button";
+import { Separator } from "@/app/ui/separator";
 import {
   PopoverTrigger,
   PopoverContent,
   Popover,
-} from "@/components/ui/popover";
+} from "@/app/ui/popover";
 import {
   DropdownMenuTrigger,
   DropdownMenuLabel,
@@ -19,7 +19,7 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuContent,
   DropdownMenu,
-} from "@/components/ui/dropdown-menu";
+} from "@/app/ui/dropdown-menu";
 import {
   BoldIcon,
   ItalicIcon,
@@ -33,7 +33,7 @@ import {
   TypeIcon,
   FileEditIcon,
   MailIcon,
-} from "../icons";
+} from "../ui/icons";
 import { type Tag, TagInput } from "emblor";
 import { useState } from "react";
 import {
@@ -42,8 +42,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { type Account } from "../services/demoaccounts";
+} from "@/app/ui/select";
+import { type Account } from "../api/demoaccounts";
 import {
   Dialog,
   DialogContent,
@@ -51,8 +51,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
+} from "@/app/ui/dialog";
+import { Label } from "@/app/ui/label";
 
 type EmailEditorProps = {
   accounts: Account[];

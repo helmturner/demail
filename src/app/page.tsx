@@ -2,15 +2,15 @@ import Link from "next/link";
 
 import { getServerAuthSession } from "@/server/auth";
 import { api } from "@/trpc/server";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/ui/button";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
-} from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+} from "@/app/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/app/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -18,20 +18,20 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
-import { CreateFilterButton } from "./_components/create-filter";
+} from "@/app/ui/dropdown-menu";
+import { Separator } from "@/app/ui/separator";
+import { Input } from "@/app/ui/input";
+import { CreateFilterButton } from "./features/create-filter";
 import { PlusIcon } from "@radix-ui/react-icons";
 import {
   MailboxIcon,
   MenuIcon,
   SearchIcon,
   UserIcon,
-} from "./icons";
-import { AccountNavigation } from "./_components/accounts-navigation";
-import { DEMO_ACCOUNTS } from "./services/demoaccounts";
-import { EmailEditor } from "./_components/email-editor";
+} from "./ui/icons";
+import { AccountNavigation } from "./features/accounts-navigation";
+import { DEMO_ACCOUNTS } from "./api/demoaccounts";
+import { EmailEditor } from "./features/email-editor";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });

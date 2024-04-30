@@ -6,14 +6,14 @@ import {
   FileEditIcon,
   SendIcon,
   FolderIcon,
-} from "../icons";
+} from "../ui/icons";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { type Account } from "../services/demoaccounts";
+} from "@/app/ui/accordion";
+import { type Account } from "../api/demoaccounts";
 
 
 type AccountsNavigationProps = {

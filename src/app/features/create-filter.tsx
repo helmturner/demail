@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input";
+import { Input } from "@/app/ui/input";
 import {
   DialogTrigger,
   DialogTitle,
@@ -6,16 +6,16 @@ import {
   DialogFooter,
   DialogContent,
   Dialog,
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
+} from "@/app/ui/dialog";
+import { Label } from "@/app/ui/label";
 import {
   SelectValue,
   SelectTrigger,
   SelectItem,
   SelectContent,
   Select,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
+} from "@/app/ui/select";
+import { Button } from "@/app/ui/button";
 
 export const CreateFilterButton = () => (
   <Dialog>
