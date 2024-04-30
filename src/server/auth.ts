@@ -10,6 +10,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import { env } from "@/env";
 import { db } from "@/server/db";
 import { createTable } from "@/server/db/schema";
+import Github from "next-auth/providers/github";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -49,9 +50,9 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: DrizzleAdapter(db, createTable) as Adapter,
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+    Github({
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
     /**
      * ...add more providers here.
