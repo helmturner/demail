@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { getServerAuthSession } from "@/server/auth";
+import { getServerAuthSession } from "@/auth";
 import { api } from "@/trpc/server";
 import { Button } from "@/app/ui/button";
 import {
