@@ -202,8 +202,7 @@ export function FolderIcon(props: React.SVGAttributes<SVGElement>) {
   );
 }
 
-
-export function AlignCenterIcon(props:React.SVGAttributes<SVGElement>) {
+export function AlignCenterIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -221,11 +220,10 @@ export function AlignCenterIcon(props:React.SVGAttributes<SVGElement>) {
       <line x1="17" x2="7" y1="12" y2="12" />
       <line x1="19" x2="5" y1="18" y2="18" />
     </svg>
-  )
+  );
 }
 
-
-export function AlignLeftIcon(props:React.SVGAttributes<SVGElement>) {
+export function AlignLeftIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -243,11 +241,10 @@ export function AlignLeftIcon(props:React.SVGAttributes<SVGElement>) {
       <line x1="15" x2="3" y1="12" y2="12" />
       <line x1="17" x2="3" y1="18" y2="18" />
     </svg>
-  )
+  );
 }
 
-
-export function AlignRightIcon(props:React.SVGAttributes<SVGElement>) {
+export function AlignRightIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -265,11 +262,10 @@ export function AlignRightIcon(props:React.SVGAttributes<SVGElement>) {
       <line x1="21" x2="9" y1="12" y2="12" />
       <line x1="21" x2="7" y1="18" y2="18" />
     </svg>
-  )
+  );
 }
 
-
-export function BoldIcon(props:React.SVGAttributes<SVGElement>) {
+export function BoldIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -286,11 +282,10 @@ export function BoldIcon(props:React.SVGAttributes<SVGElement>) {
       <path d="M14 12a4 4 0 0 0 0-8H6v8" />
       <path d="M15 20a4 4 0 0 0 0-8H6v8Z" />
     </svg>
-  )
+  );
 }
 
-
-export function ImageIcon(props:React.SVGAttributes<SVGElement>) {
+export function ImageIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -308,11 +303,10 @@ export function ImageIcon(props:React.SVGAttributes<SVGElement>) {
       <circle cx="9" cy="9" r="2" />
       <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
     </svg>
-  )
+  );
 }
 
-
-export function ItalicIcon(props:React.SVGAttributes<SVGElement>) {
+export function ItalicIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -330,11 +324,10 @@ export function ItalicIcon(props:React.SVGAttributes<SVGElement>) {
       <line x1="14" x2="5" y1="20" y2="20" />
       <line x1="15" x2="9" y1="4" y2="20" />
     </svg>
-  )
+  );
 }
 
-
-export function LinkIcon(props:React.SVGAttributes<SVGElement>) {
+export function LinkIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -351,11 +344,10 @@ export function LinkIcon(props:React.SVGAttributes<SVGElement>) {
       <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
       <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
     </svg>
-  )
+  );
 }
 
-
-export function MailIcon(props:React.SVGAttributes<SVGElement>) {
+export function MailIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -372,11 +364,10 @@ export function MailIcon(props:React.SVGAttributes<SVGElement>) {
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
-  )
+  );
 }
 
-
-export function TextIcon(props:React.SVGAttributes<SVGElement>) {
+export function TextIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -394,11 +385,10 @@ export function TextIcon(props:React.SVGAttributes<SVGElement>) {
       <path d="M21 12.1H3" />
       <path d="M15.1 18H3" />
     </svg>
-  )
+  );
 }
 
-
-export function TypeIcon(props:React.SVGAttributes<SVGElement>) {
+export function TypeIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -416,11 +406,10 @@ export function TypeIcon(props:React.SVGAttributes<SVGElement>) {
       <line x1="9" x2="15" y1="20" y2="20" />
       <line x1="12" x2="12" y1="4" y2="20" />
     </svg>
-  )
+  );
 }
 
-
-export function UnderlineIcon(props:React.SVGAttributes<SVGElement>) {
+export function UnderlineIcon(props: React.SVGAttributes<SVGElement>) {
   return (
     <svg
       {...props}
@@ -437,5 +426,5 @@ export function UnderlineIcon(props:React.SVGAttributes<SVGElement>) {
       <path d="M6 4v6a6 6 0 0 0 12 0V4" />
       <line x1="4" x2="20" y1="20" y2="20" />
     </svg>
-  )
+  );
 }

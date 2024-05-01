@@ -165,16 +165,12 @@ export const machine = createMachine(
       clearError: () => {},
     },
     actors: {
-      fetchEmails: fromPromise(
-        async () => {
-          return [];
-        },
-      ),
-      sendEmail: fromPromise(
-        async () => {
-          return [];
-        },
-      ),
+      fetchEmails: fromPromise(async () => {
+        return [];
+      }),
+      sendEmail: fromPromise(async () => {
+        return [];
+      }),
     },
     guards: {},
     delays: {},

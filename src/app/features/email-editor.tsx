@@ -7,11 +7,7 @@
 import { Input } from "@/app/ui/input";
 import { Button } from "@/app/ui/button";
 import { Separator } from "@/app/ui/separator";
-import {
-  PopoverTrigger,
-  PopoverContent,
-  Popover,
-} from "@/app/ui/popover";
+import { PopoverTrigger, PopoverContent, Popover } from "@/app/ui/popover";
 import {
   DropdownMenuTrigger,
   DropdownMenuLabel,
@@ -87,7 +83,7 @@ export function EmailEditor(props: EmailEditorProps) {
               >
                 To:
               </Label>
-              <div className="*:items-center w-full rounded-md border border-gray-300 bg-gray-100 p-0 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
+              <div className="w-full rounded-md border border-gray-300 bg-gray-100 p-0 text-sm *:items-center focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
                 <TagInput
                   placeholder="To"
                   inputFieldPosition="inline"
@@ -136,16 +132,15 @@ export function EmailEditor(props: EmailEditorProps) {
               >
                 Cc:
               </Label>
-              <div className="*:items-center w-full rounded-md border border-gray-300 bg-gray-100 p-0 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-
-              <TagInput
-                className="w-full rounded-md border border-gray-300 bg-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
-                placeholder="Cc"
-                inputFieldPosition="inline"
-                type="email"
-                tags={cc}
-                setTags={setCc}
-              />
+              <div className="w-full rounded-md border border-gray-300 bg-gray-100 p-0 text-sm *:items-center focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
+                <TagInput
+                  className="w-full rounded-md border border-gray-300 bg-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                  placeholder="Cc"
+                  inputFieldPosition="inline"
+                  type="email"
+                  tags={cc}
+                  setTags={setCc}
+                />
               </div>
             </div>
             <div className="flex w-full items-center gap-4">
@@ -155,16 +150,15 @@ export function EmailEditor(props: EmailEditorProps) {
               >
                 Bcc:
               </Label>
-              <div className="*:items-center w-full rounded-md border border-gray-300 bg-gray-100 p-0 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-
-              <TagInput
-                className="w-full rounded-md border border-gray-300 bg-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
-                placeholder="Bcc"
-                inputFieldPosition="inline"
-                type="email"
-                tags={bcc}
-                setTags={setBcc}
-              />
+              <div className="w-full rounded-md border border-gray-300 bg-gray-100 p-0 text-sm *:items-center focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
+                <TagInput
+                  className="w-full rounded-md border border-gray-300 bg-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                  placeholder="Bcc"
+                  inputFieldPosition="inline"
+                  type="email"
+                  tags={bcc}
+                  setTags={setBcc}
+                />
               </div>
             </div>
           </div>

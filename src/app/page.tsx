@@ -23,12 +23,7 @@ import { Separator } from "@/app/ui/separator";
 import { Input } from "@/app/ui/input";
 import { CreateFilterButton } from "./features/create-filter";
 import { PlusIcon } from "@radix-ui/react-icons";
-import {
-  MailboxIcon,
-  MenuIcon,
-  SearchIcon,
-  UserIcon,
-} from "./ui/icons";
+import { MailboxIcon, MenuIcon, SearchIcon, UserIcon } from "./ui/icons";
 import { AccountNavigation } from "./features/accounts-navigation";
 import { DEMO_ACCOUNTS } from "./api/demoaccounts";
 import { EmailEditor } from "./features/email-editor";
@@ -39,7 +34,7 @@ export default async function Home() {
 
   return (
     <div key="1" className="flex min-h-screen">
-      <div className="hidden h-screen w-72 bg-gray-100 lg:block dark:bg-gray-800">
+      <div className="hidden h-screen w-72 bg-gray-100 dark:bg-gray-800 lg:block">
         <div className="flex h-full max-h-screen flex-col justify-start p-0">
           <header className="flex h-14 items-center justify-around gap-4 border-b bg-gray-100 p-3 dark:bg-gray-800">
             <Link className="flex items-center gap-2 font-semibold" href="#">
@@ -52,7 +47,7 @@ export default async function Home() {
             </Button>
           </header>
           <main className="overflow-auto px-4">
-          <AccountNavigation accounts={DEMO_ACCOUNTS} />
+            <AccountNavigation accounts={DEMO_ACCOUNTS} />
             <div className="flex flex-col gap-4">
               <div className="p-2">
                 <Card>
@@ -85,7 +80,7 @@ export default async function Home() {
               <div className="relative">
                 <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
                 <Input
-                  className="w-full appearance-none bg-white pl-8 shadow-none md:w-2/3 lg:w-1/2 dark:bg-gray-950"
+                  className="w-full appearance-none bg-white pl-8 shadow-none dark:bg-gray-950 md:w-2/3 lg:w-1/2"
                   placeholder="Search emails..."
                   type="search"
                 />
@@ -114,7 +109,7 @@ export default async function Home() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
               <h1 className="text-2xl font-bold">Inbox</h1>
-              <EmailEditor accounts={DEMO_ACCOUNTS}/>
+              <EmailEditor accounts={DEMO_ACCOUNTS} />
             </div>
             <div className="grid gap-4">
               <div className="group flex flex-col gap-4 rounded-lg border border-gray-200 py-2 dark:border-gray-800">
