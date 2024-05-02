@@ -32,7 +32,7 @@ export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
   const session = await auth();
 
-  return (
+  return session ?
       <div key="1" className="flex min-h-screen">
         <div className="hidden h-screen w-72 bg-gray-100 dark:bg-gray-800 lg:block">
           <div className="flex h-full max-h-screen flex-col justify-start p-0">
@@ -139,9 +139,9 @@ export default async function Home() {
                     <div className="prose prose-sm prose-p:leading-normal flex-1 whitespace-pre-wrap p-4 text-sm">
                       <p>
                         Hi, let&apos;s have a meeting tomorrow to discuss the
-                      project. I&apos;ve been reviewing the project details and
-                      have some ideas I&apos;d like to share. It&apos;s crucial
-                      that we align on our next steps to ensure the
+                        project. I&apos;ve been reviewing the project details
+                        and have some ideas I&apos;d like to share. It&apos;s
+                        crucial that we align on our next steps to ensure the
                         project&apos;s success.
                       </p>
                       <p>
@@ -186,14 +186,14 @@ export default async function Home() {
                         <br />
                         <br />I wanted to provide an update on the project
                         progress. We have completed the initial design phase and
-                      are now moving into development. The team has been working
-                      hard to ensure we meet our deadlines and deliver a
-                      high-quality product.
+                        are now moving into development. The team has been
+                        working hard to ensure we meet our deadlines and deliver
+                        a high-quality product.
                       </p>
                       <p>
-                      Please let me know if you have any questions or concerns.
-                      I&apos;ll be sure to keep you all updated as we move
-                      forward.
+                        Please let me know if you have any questions or
+                        concerns. I&apos;ll be sure to keep you all updated as
+                        we move forward.
                       </p>
                       <p>
                         Thank you,
@@ -208,5 +208,9 @@ export default async function Home() {
           </main>
         </div>
       </div>
-  );
+    : <div key="2" className="flex min-h-screen items-center justify-center">
+        <Link href="/api/auth/signin">
+          <Button size="lg">Sign in</Button>
+        </Link>
+      </div>;
 }
