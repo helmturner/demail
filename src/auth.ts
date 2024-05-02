@@ -1,10 +1,9 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type DefaultSession } from "next-auth";
 import { db } from "@/db";
-import { createTable } from "@/server/db/schema";
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import Passkey from "@auth/core/providers/passkey";
+import Passkey from "next-auth/providers/passkey";
 
 import GitHub from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
@@ -34,6 +33,7 @@ declare module "next-auth" {
 const providers: Provider[] = [
   Google,
   GitHub,
+  Passkey,
   Credentials({
     credentials: { password: { label: "Password", type: "password" } },
     authorize(c) {
