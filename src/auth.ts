@@ -30,22 +30,7 @@ declare module "next-auth" {
   // }
 }
 
-const providers: Provider[] = [
-  Google,
-  GitHub,
-  Passkey,
-  Credentials({
-    credentials: { password: { label: "Password", type: "password" } },
-    authorize(c) {
-      if (c.password !== "password") return null;
-      return {
-        id: "test",
-        name: "Test User",
-        email: "test@example.com",
-      };
-    },
-  }),
-];
+const providers: Provider[] = [Google, GitHub, Passkey];
 
 export const providerMap = providers.map((provider) => {
   if (typeof provider === "function") {
@@ -59,13 +44,14 @@ export const providerMap = providers.map((provider) => {
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
   adapter: PrismaAdapter(db),
-  pages: {
-    signIn: "/signin",
-    signOut: "/signout",
-    error: "/error",
-    verifyRequest: "/verify-request",
-    newUser: "/new-user",
-  },
+  // pages: {
+  //   signIn: "/signin",
+  //   signOut: "/signout",
+  //   error: "/error",
+  //   verifyRequest: "/verify-request",
+  //   newUser: "/new-user",
+  // },
+  experimental: { enableWebAuthn: true },
   callbacks: {
     session: ({ session, user }) => ({
       ...session,
