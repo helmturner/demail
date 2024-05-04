@@ -3,6 +3,7 @@ import Link from "next/link";
 import { auth } from "@/auth";
 import { api } from "@/trpc/server";
 import { Button } from "@/app/ui/button";
+
 import {
   Card,
   CardHeader,
@@ -90,17 +91,33 @@ export default async function Home() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button className="rounded-full" size="icon" variant="ghost">
-                  <UserIcon className="h-6 w-6" />
+                  <Avatar>
+                    {session.user.image ?
+                      <AvatarImage
+                        alt="My Avatar"
+                        src={session.user.image ?? undefined}
+                      />
+                    : <AvatarFallback>
+                        <UserIcon className="h-6 w-6" />
+                      </AvatarFallback>
+                    }
+                  </Avatar>
                   <span className="sr-only">Toggle user menu</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuLabel>
+                  <Link href={`/${session.user.id}/settings`}>My Account</Link>
+                </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuItem>Support</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="mailto:help@alecvision.com">Support</Link>
+                </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Logout</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/api/auth/signout">Sign out</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <CreateFilterButton />
