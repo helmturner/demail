@@ -3,11 +3,11 @@ import { type DefaultSession } from "next-auth";
 import { db } from "@/db";
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import Passkey from "next-auth/providers/passkey";
-
 import GitHub from "next-auth/providers/github";
-import Credentials from "next-auth/providers/credentials";
 import type { Provider } from "next-auth/providers";
+// import { env } from "./env";
+// import Passkey from "next-auth/providers/passkey";
+// import crypto from "crypto";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -16,21 +16,24 @@ import type { Provider } from "next-auth/providers";
  * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
  */
 declare module "next-auth" {
+  interface AdapterUser extends User {
+    email: string;
+  }
+
   interface Session extends DefaultSession {
+    // Add custom properties to the `session` object
     user: {
-      id: string;
-      // ...other properties
-      // role: UserRole;
+      email: string;
     } & DefaultSession["user"];
   }
 
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
+  interface User {
+    /** Not yet implemented */
+    twoFactorEnabled?: false; // TODO: implement 2FA w/ passkey
+  }
 }
 
-const providers: Provider[] = [Google, GitHub, Passkey];
+const providers: Provider[] = [Google, GitHub /*, Passkey */];
 
 export const providerMap = providers.map((provider) => {
   if (typeof provider === "function") {
@@ -51,8 +54,15 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   //   verifyRequest: "/verify-request",
   //   newUser: "/new-user",
   // },
-  experimental: { enableWebAuthn: true },
+  //  experimental: { enableWebAuthn: true },
   callbacks: {
+    // signIn: async (params) => {
+    //   if (params.user.twoFactorEnabled) {
+    //     console.log("2FA enabled");
+    //   }
+
+    //   return true;
+    // },
     session: ({ session, user }) => ({
       ...session,
       user: {
